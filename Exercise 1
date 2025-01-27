@@ -1,1 +1,40 @@
+# 1.2.5
+## Q1
+install.packages("tidyverse")
+library(tidyverse)
+library(palmerpenguins)
+library(ggthemes)
+glimpse(penguins)
+# Answer: There are 34 rows and 8 columns in penguins.
 
+## Q2
+?penguins
+#Answer: The bill_depth_mm variable in the penguins data frame describes the depth of the penguin's bill (in millimeters). 
+
+## Q3
+ggplot(
+  data = penguins, 
+  aes(x = bill_depth_mm, y = bill_length_mm)
+) + 
+  geom_point()
+#> Warning: Removed 2 rows containing missing values (`geom_point()`).
+#Answer:3.There is a positive, linear relationship between bill depth and bill length of penguins.
+
+## Q4
+ggplot(
+  data = penguins, 
+  aes(x = bill_depth_mm, y = species)
+) + 
+  geom_point()
+#> Warning: Removed 2 rows containing missing values (`geom_point()`).
+#Answer: The scatterplot plots points vertically for each species along the x-axis.
+#A scatterplot is not that useful for visualizing a continuous variable (bill_depth_mm) against a categorical variable (species) as it’s difficult to use it to describe the distribution of bill depth across species, a boxplot or violin plot would be more appropriate.
+
+## Q5
+# Answer: The given code doesn’t specify aesthetic mappings for x and y, which are required for for the point geom.
+# Fix: Add aesthetic mappings to geom_point. For example, if you want to create a scatterplot of bill_length_mm vs. bill_depth_mm, you can use the following code: 
+ggplot(
+  data = penguins, 
+  aes(x = bill_length_mm, y = bill_depth_mm)
+) + 
+  geom_point()
