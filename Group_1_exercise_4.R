@@ -68,7 +68,7 @@ flights %>%
   ### 'trims_ws' -> whether to trim whitespace from character fields,
   ### n_max' -> maximum number of rows to read.
 
-## 3 The most important argumnets to 'read_fwf()'
+## 3 The most important arguments to 'read_fwf()'
   ### 'col_positions' which determines where columns begin and end in fixed-width files,
   ### 'skip' which determines number of lines to skip before reading data.
 
